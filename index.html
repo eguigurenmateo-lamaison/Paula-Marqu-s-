@@ -761,8 +761,55 @@
     filter: invert(0);
   }
 
+  /* ── HOTELS CTA ── */
+  .hotels-cta {
+    background: var(--cream);
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 100px;
+    align-items: center;
+  }
+  .hotels-cta-text p:not(.section-label) {
+    font-size: 15px;
+    line-height: 1.9;
+    color: var(--brown);
+    margin-bottom: 20px;
+  }
+  .hotels-cta-btn {
+    display: inline-block;
+    background: var(--accent);
+    border: none;
+    color: var(--cream);
+    font-family: 'Montserrat', sans-serif;
+    font-size: 10px;
+    letter-spacing: 0.35em;
+    text-transform: uppercase;
+    text-decoration: none;
+    padding: 14px 32px;
+    margin-top: 16px;
+    transition: background 0.3s;
+  }
+  .hotels-cta-btn:hover { background: var(--mid); }
+  .hotels-cta-image {
+    position: relative;
+    height: 600px;
+    overflow: hidden;
+  }
+  .hotels-cta-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: grayscale(20%);
+    transition: transform 0.8s ease, filter 0.5s;
+  }
+  .hotels-cta-image:hover img { transform: scale(1.04); filter: none; }
 
-  
+  @media (max-width: 900px) {
+    .hotels-cta { grid-template-columns: 1fr; gap: 50px; }
+    .hotels-cta-image { height: 380px; }
+  }
+
+
 </style>
 </head>
 <body>
@@ -775,6 +822,7 @@
     <li><a href="#brands">Brands</a></li>
     <li><a href="#content">Content</a></li>
     <li><a href="#gallery">Portfolio</a></li>
+    <li><a href="hotels.html">Hotels</a></li>
     <li><a href="#contact">Contact</a></li>
   </ul>
   
@@ -1021,6 +1069,21 @@
       </div>
   </div>
 </div>
+
+<!-- HOTELS CTA -->
+<section class="hotels-cta">
+  <div class="hotels-cta-text">
+    <p class="section-label reveal">Hotels</p>
+    <h2 class="section-title reveal">Hotel<br><em>Photography</em></h2>
+    <div class="divider reveal"></div>
+    <p class="reveal">Beyond fashion and beauty, Paula brings an editorial eye to hospitality — capturing the light, texture and atmosphere that turn a property into a destination worth booking.</p>
+    <p class="reveal">A dedicated portfolio of spa, suite and interior work for hotels and resorts seeking imagery as considered as their guest experience.</p>
+    <a href="hotels.html" class="hotels-cta-btn reveal">View the Hotel Portfolio</a>
+  </div>
+  <div class="hotels-cta-image reveal">
+    <img src="img/hotels/spa-01.jpg" alt="Moody indoor hotel spa pool lit for an editorial hospitality photography portfolio" loading="lazy" decoding="async">
+  </div>
+</section>
 
 <!-- CONTACT -->
 <section class="contact-section" id="contact">
