@@ -261,7 +261,7 @@
 
   .brands-grid {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(4, minmax(0, 1fr));
     gap: 2px;
     margin-top: 60px;
   }
@@ -274,6 +274,7 @@
   }
   .brand-card:hover { background: var(--mid); }
   .brand-card span {
+    overflow-wrap: break-word;
     font-family: 'Cormorant Garamond', serif;
     font-size: 16px;
     font-weight: 400;
@@ -301,7 +302,7 @@
   }
   .content-grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(3, minmax(0, 1fr));
     gap: 2px;
   }
   .content-card {
@@ -401,7 +402,7 @@
   }
   .gallery-mosaic {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 4px;
     margin-top: 70px;
   }
@@ -473,6 +474,7 @@
     min-width: 80px;
   }
   .contact-item-value {
+    overflow-wrap: anywhere;
     font-family: 'Cormorant Garamond', serif;
     font-size: 18px;
     color: var(--cream);
@@ -560,9 +562,17 @@
     section { padding: 80px 30px; }
     .about { grid-template-columns: 1fr; gap: 50px; }
     .content-grid { grid-template-columns: 1fr 1fr; }
-    .brands-grid { grid-template-columns: repeat(2, 1fr); }
-    .contact-section { grid-template-columns: 1fr; padding: 80px 30px; }
-    .gallery-mosaic { grid-template-columns: 1fr 1fr; }
+    .brands-section { padding: 80px 30px; }
+    .brands-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .brand-card { padding: 30px 14px; }
+    .brand-card span { font-size: 13px; letter-spacing: 0.12em; }
+    .about-image { height: 460px; }
+    .contact-image { height: 380px; }
+    .social-links { flex-wrap: wrap; gap: 24px; row-gap: 14px; }
+    .social-link { padding: 12px 0 10px; }
+    .contact-item-value { display: inline-block; padding: 7px 0; }
+    .contact-section { grid-template-columns: minmax(0, 1fr); padding: 80px 30px; }
+    .gallery-mosaic { grid-template-columns: repeat(2, minmax(0, 1fr)); }
 
     footer { flex-direction: column; gap: 12px; text-align: center; padding: 30px; }
     .hero-content { padding: 0 30px; }
@@ -574,7 +584,7 @@
   /* ── VISUAL STORIES GRID ── */
   .vs-grid {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 4px;
     margin-top: 60px;
   }
@@ -770,7 +780,7 @@
 
   .inner-grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(3, minmax(0, 1fr));
     gap: 3px;
     padding: 3px;
   }
@@ -801,8 +811,10 @@
   }
 
   @media (max-width: 600px) {
+    .contact-item { flex-direction: column; align-items: flex-start; gap: 6px; }
+    .contact-item-label { min-width: 0; }
     .panel-header { padding: 20px 20px; }
-    .inner-grid { grid-template-columns: repeat(2, 1fr); }
+    .inner-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   }
 
 
